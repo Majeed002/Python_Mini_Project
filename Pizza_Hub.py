@@ -1,5 +1,5 @@
 from tkinter import *
-import pymysql
+#import pymysql
 import datetime
 
 
@@ -8,10 +8,11 @@ P_win=Tk()
 P_win.geometry("1300x770")
 P_win.title("MENU WINDOW")
 P_win.configure(background='khaki1')
+P_win.resizable(0,0)
 ##################################################################################################################################################################
 
-conn= pymysql.connect(host="localhost",user="root",password="",database="pizza_planet")
-cursor=conn.cursor()
+#conn= pymysql.connect(host="localhost",user="root",password="",database="pizza_planet")
+#cursor=conn.cursor()
 
 ##################################################################################################################################################################
 
@@ -392,7 +393,7 @@ def order_window():
     
    
 ##################################################################################################################################################################
-photo_title=PhotoImage(file = 'title.png')
+photo_title=PhotoImage(file = './Images/title.png')
 titleimg_label=Label(P_win,image=photo_title,bg='khaki1',compound=TOP,borderwidth=1)
 titleimg_label.place(x = 20, y = 10)
 title_label=Label(P_win,text="PIZZA PLANET",bg='khaki1',fg='lightgoldenrod4',font="Arial  40 italic")
@@ -401,7 +402,7 @@ title_label=Label(P_win,text="GRAB A BITE TODAY...",bg='khaki1',fg='lightgoldenr
 title_label.place(x = 225, y = 95)
 
 ##################################################################################################################################################################
-photo_dnt=PhotoImage(file = 'date&time.png')
+photo_dnt=PhotoImage(file = './Images/date&time.png')
 timeimg_label=Label(P_win,image=photo_dnt,compound=TOP,bg='khaki1',borderwidth=1)
 timeimg_label.place(x = 20, y = 130)
 time_label=Label(P_win,text="DATE & TIME:",bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -411,7 +412,7 @@ time_entry.place(x = 100, y= 170)
 now = datetime.datetime.now()
 time_entry.insert(0,now)
 
-photo_name=PhotoImage(file = 'name.png')
+photo_name=PhotoImage(file = './Images/name.png')
 nameimg_label=Label(P_win,image=photo_name,compound=TOP,bg='khaki1',borderwidth=1)
 nameimg_label.place(x = 420, y = 130)
 name_label=Label(P_win,text="NAME:",bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -419,7 +420,7 @@ name_label.place(x = 500, y = 140)
 name_entry=Entry(P_win,textvar=name_var,font='Arial 15',width=15)
 name_entry.place(x = 500, y= 170)
 
-photo_phone=PhotoImage(file = 'phone.png')
+photo_phone=PhotoImage(file = './Images/phone.png')
 phoneimg_label=Label(P_win,image=photo_phone,compound=TOP,bg='khaki1',borderwidth=1)
 phoneimg_label.place(x = 720, y = 130)
 mobile_label=Label(P_win,text="MOBILE No.:",bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -428,20 +429,20 @@ mobile_entry=Entry(P_win,textvar=mobile_var,font='Arial 15',width=15)
 mobile_entry.place(x = 800, y= 170)
 
 ##################################################################################################################################################################
-photo_pizza=PhotoImage(file = 'pizza.png')
+photo_pizza=PhotoImage(file = './Images/pizza.png')
 pizzaimg_label=Label(P_win,image=photo_pizza,compound=TOP,borderwidth=1)
 pizzaimg_label.place(x = 40, y = 215)
 Pizza_label=Label(P_win,text='PIZZA',bg='khaki1',fg='darkgoldenrod4',font='Arial 25')
 Pizza_label.place(x = 100,y = 225)
 
-photo_drinks=PhotoImage(file = 'drinks.png')
+photo_drinks=PhotoImage(file = './Images/drinks.png')
 drinksimg_label=Label(P_win,image=photo_drinks,compound=TOP,borderwidth=1)
 drinksimg_label.place(x = 660, y = 215)
 Drinks_label=Label(P_win,text='DRINKS',bg='khaki1',fg='darkgoldenrod4',font='Arial 25')
 Drinks_label.place(x = 720,y = 225)
 
 ##################################################################################################################################################################
-photo1=PhotoImage(file = 'veg-italiano.png')
+photo1=PhotoImage(file = './Images/veg-italiano.png')
 P_b1=Button(P_win,image=photo1,compound=TOP,borderwidth=1,command=p1_quantity)
 P_b1.place(x = 40, y = 280)
 P_l1=Label(P_win,text='Veggie Italiano \n Rs.199/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -451,7 +452,7 @@ P_lq1.place(x = 178, y = 330)
 P_e1=Entry(P_win,textvar=p1_var,width=8,font='Arial 10 ')
 P_e1.place(x = 232, y = 337)
 
-photo2=PhotoImage(file = 'classic-corn.png')
+photo2=PhotoImage(file = './Images/classic-corn.png')
 P_b2=Button(P_win,image=photo2,compound=TOP,borderwidth=1,command=p2_quantity)
 P_b2.place(x = 40, y = 400)
 P_l2=Label(P_win,text='Classic Corn\nRs.209/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -461,7 +462,7 @@ P_lq2.place(x = 178, y = 450)
 P_e2=Entry(P_win,textvar=p2_var,width=8,font='Arial 10 ')
 P_e2.place(x = 232, y = 457)
 
-photo3=PhotoImage(file = 'soya-masala.png')
+photo3=PhotoImage(file = './Images/soya-masala.png')
 P_b3=Button(P_win,image=photo3,compound=TOP,borderwidth=1,command=p3_quantity)
 P_b3.place(x = 40, y = 520)
 P_l3=Label(P_win,text='Soya Masala\nRs.229/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -471,7 +472,7 @@ P_lq3.place(x = 178, y = 570)
 P_e3=Entry(P_win,textvar=p3_var,width=8,font='Arial 10 ')
 P_e3.place(x = 232, y = 577)                      
 
-photo4=PhotoImage(file = 'paneer-masala.png')
+photo4=PhotoImage(file = './Images/paneer-masala.png')
 P_b4=Button(P_win,image=photo4,compound=TOP,borderwidth=1,command=p4_quantity)
 P_b4.place(x = 40, y = 640)
 P_l4=Label(P_win,text='Paneer Masala\nRs.249/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -481,7 +482,7 @@ P_lq4.place(x = 178, y = 690)
 P_e4=Entry(P_win,textvar=p4_var,width=8,font='Arial 10 ')
 P_e4.place(x = 232, y = 697)
 
-photo5=PhotoImage(file = 'chicken-italiano.png')
+photo5=PhotoImage(file = './Images/chicken-italiano.png')
 P_b5=Button(P_win,image=photo5,compound=TOP,borderwidth=1,command=p5_quantity)
 P_b5.place(x = 340, y = 280)
 P_l5=Label(P_win,text='Chicken Italiano\nRs.259/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -491,7 +492,7 @@ P_lq5.place(x = 478, y = 330)
 P_e5=Entry(P_win,textvar=p5_var,width=8,font='Arial 10 ')
 P_e5.place(x = 532, y = 337)
 
-photo6=PhotoImage(file = 'chicken-sausage.png')
+photo6=PhotoImage(file = './Images/chicken-sausage.png')
 P_b6=Button(P_win,image=photo6,compound=TOP,borderwidth=1,command=p6_quantity)
 P_b6.place(x = 340, y = 400)
 P_l6=Label(P_win,text='Chicken Sausage\nRs.259/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -502,7 +503,7 @@ P_e6=Entry(P_win,textvar=p6_var,width=8,font='Arial 10 ')
 P_e6.place(x = 532, y = 457)
 
 
-photo7=PhotoImage(file = 'lebanese-chicken.png')
+photo7=PhotoImage(file = './Images/lebanese-chicken.png')
 P_b7=Button(P_win,image=photo7,compound=TOP,borderwidth=1,command=p7_quantity)
 P_b7.place(x = 340, y = 520)
 P_l7=Label(P_win,text='Lebanese Chicken\nRs.289/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -512,7 +513,7 @@ P_lq7.place(x = 478, y = 570)
 P_e7=Entry(P_win,textvar=p7_var,width=8,font='Arial 10 ')
 P_e7.place(x = 532, y = 577)
 
-photo8=PhotoImage(file = 'chicken-supreme.png')
+photo8=PhotoImage(file = './Images/chicken-supreme.png')
 P_b8=Button(P_win,image=photo8,compound=TOP,borderwidth=1,command=p8_quantity)
 P_b8.place(x = 340, y = 640)
 P_l8=Label(P_win,text='Chicken Supreme\nRs.299/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -522,7 +523,7 @@ P_lq8.place(x = 478, y = 690)
 P_e8=Entry(P_win,textvar=p8_var,width=8,font='Arial 10 ')
 P_e8.place(x = 532, y = 697)
 
-photo9=PhotoImage(file = 'pepsi.png')
+photo9=PhotoImage(file = './Images/pepsi.png')
 CD_b1=Button(P_win,image=photo9,compound=TOP,borderwidth=1,command=cd1_quantity)
 CD_b1.place(x = 660, y = 280)
 CD_l1=Label(P_win,text='Pepsi 250ml\nRs.49/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -532,7 +533,7 @@ CD_lq1.place(x = 808, y = 330)
 CD_e1=Entry(P_win,textvar=cd1_var,width=8,font='Arial 10 ')
 CD_e1.place(x = 862, y = 337)
 
-photo10=PhotoImage(file = '7-up.png')
+photo10=PhotoImage(file = './Images/7-up.png')
 CD_b2=Button(P_win,image=photo10,compound=TOP,borderwidth=1,command=cd2_quantity)
 CD_b2.place(x = 660, y = 400)
 CD_l2=Label(P_win,text='7-UP 250ml\nRs.49/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
@@ -542,7 +543,7 @@ CD_lq2.place(x = 808, y = 450)
 CD_e2=Entry(P_win,textvar=cd2_var,width=8,font='Arial 10 ')
 CD_e2.place(x = 862, y = 457)
 
-photo11=PhotoImage(file = 'mirinda.png')
+photo11=PhotoImage(file = './Images/mirinda.png')
 CD_b3=Button(P_win,image=photo11,compound=TOP,borderwidth=1,command=cd3_quantity)
 CD_b3.place(x = 660, y = 520)
 CD_l3=Label(P_win,text='Mirinda 250ml\nRs.49/-',bg='khaki1',fg='darkgoldenrod4',font='Arial 15')
